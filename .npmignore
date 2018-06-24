@@ -3,3 +3,4 @@ test/
 examples/
 tsconfig*.json
 tslint.json
+.travis.yml
