@@ -71,23 +71,23 @@ http.get("http://www.gstatic.com/webp/gallery/1.webp", (res) => {
 
 ## API
 
-## Please refer detailed type definitions on [src/webpinfo.ts](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L132-L225).
+### Please refer detailed type definitions on [src/webpinfo.ts](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L132-L225).
 
-## `WebPInfo` => [`WritableStream`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L228)
+### `WebPInfo` => [`WritableStream`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L228)
 
 Basically WebPInfo is `WritableStream`.
 
 
-## `WebPInfo.parse(buf: Buffer)` => [`Promise<WebP>`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L216-L225)
+### `WebPInfo.parse(buf: Buffer)` => [`Promise<WebP>`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L216-L225)
  
 Parse WebPInfo from given Buffer.
 
 
-## `WebPInfo.isAnimated(buf: Buffer)` => `Promise<boolean>`
+### `WebPInfo.isAnimated(buf: Buffer)` => `Promise<boolean>`
 
 Return true if given buffer contains any animation frame.
 
-## `WebPInfo.isLossless(buf: Buffer)` => `Promise<boolean>`
+### `WebPInfo.isLossless(buf: Buffer)` => `Promise<boolean>`
 
 Return true if given buffer contains VP8L chunk.
 
@@ -107,7 +107,7 @@ emitted after parsing riff header.
 
 emitted after parsing WebP chunk
 
-## `format`
+### `format`
 
 - Event Payload: [`WebP`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L216-L225)
 
