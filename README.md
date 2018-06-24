@@ -1,11 +1,11 @@
 # node-webpinfo
 
-[![Build Status](https://travis-ci.org/mooyoul/node-webpinfo.svg?branch=master)](https://travis-ci.org/mooyoul/node-kiturami)
-[![Coverage Status](https://coveralls.io/repos/github/mooyoul/node-webpinfo/badge.svg?branch=master)](https://coveralls.io/github/mooyoul/node-kiturami?branch=master)
-[![codecov.io](https://codecov.io/github/mooyoul/node-webpinfo/coverage.svg?branch=master)](https://codecov.io/github/mooyoul/node-kiturami?branch=master)
-[![Dependency Status](https://david-dm.org/mooyoul/node-webpinfo.svg)](https://david-dm.org/mooyoul/node-kiturami)
-[![devDependency Status](https://david-dm.org/mooyoul/node-webpinfo/dev-status.svg)](https://david-dm.org/mooyoul/node-kiturami#info=devDependencies)
-[![Known Vulnerabilities](https://snyk.io/test/github/mooyoul/node-webpinfo/badge.svg)](https://snyk.io/test/github/mooyoul/node-kiturami)
+[![Build Status](https://travis-ci.org/mooyoul/node-webpinfo.svg?branch=master)](https://travis-ci.org/mooyoul/node-webpinfo)
+[![Coverage Status](https://coveralls.io/repos/github/mooyoul/node-webpinfo/badge.svg?branch=master)](https://coveralls.io/github/mooyoul/node-webpinfo?branch=master)
+[![codecov.io](https://codecov.io/github/mooyoul/node-webpinfo/coverage.svg?branch=master)](https://codecov.io/github/mooyoul/node-webpinfo?branch=master)
+[![Dependency Status](https://david-dm.org/mooyoul/node-webpinfo.svg)](https://david-dm.org/mooyoul/node-webpinfo)
+[![devDependency Status](https://david-dm.org/mooyoul/node-webpinfo/dev-status.svg)](https://david-dm.org/mooyoul/node-webpinfo#info=devDependencies)
+[![Known Vulnerabilities](https://snyk.io/test/github/mooyoul/node-webpinfo/badge.svg)](https://snyk.io/test/github/mooyoul/node-webpinfo)
 [![MIT license](http://img.shields.io/badge/license-MIT-blue.svg)](http://mooyoul.mit-license.org/)
 
 Node.js Stream based WebP Container Parser.
