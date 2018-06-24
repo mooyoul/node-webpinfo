@@ -1,8 +1,9 @@
 {
   "name": "webpinfo",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Get information of WebP Image (Supports Animated WebP also!)",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "clean": "rm -rf lib",
     "build": "npm run clean && tsc",
@@ -46,7 +47,6 @@
     "@types/chai": "^4.1.4",
     "@types/chai-as-promised": "^7.1.0",
     "@types/mocha": "^5.2.3",
-    "@types/node": "^10.3.4",
     "@types/sinon": "^5.0.1",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "@types/debug": "0.0.30",
+    "@types/node": "^10.3.4",
     "debug": "^3.1.0",
     "stream-parser": "^0.3.1",
     "thunks": "^4.9.2"
