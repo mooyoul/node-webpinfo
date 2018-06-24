@@ -71,45 +71,45 @@ http.get("http://www.gstatic.com/webp/gallery/1.webp", (res) => {
 
 ## API
 
-## Please refer detailed type definitions on here.
+## Please refer detailed type definitions on [src/webpinfo.ts](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L132-L225).
 
-## `WebPInfo` => `WtiableStream`
+## `WebPInfo` => [`WritableStream`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L228)
 
 Basically WebPInfo is `WritableStream`.
 
 
-## `WebPInfo.parse(buf: Buffer) => Promies<WebPInfo>`
+## `WebPInfo.parse(buf: Buffer)` => [`Promise<WebP>`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L216-L225)
  
-Parse WebPInfo from given Buffer
+Parse WebPInfo from given Buffer.
 
 
-## `WebPInfo.isAnimated(buf: Buffer) => Promise<boolean>`
+## `WebPInfo.isAnimated(buf: Buffer)` => `Promise<boolean>`
 
 Return true if given buffer contains any animation frame.
 
-## `WebPInfo.isLossless(buf: Buffer) => Promise<boolean>`
+## `WebPInfo.isLossless(buf: Buffer)` => `Promise<boolean>`
 
-Returns true if given buffer contains VP8L chunk.
+Return true if given buffer contains VP8L chunk.
 
 
 ## Stream Events
 
 ### `riff`
 
-- Event Payload: `RIFFContainer`
+- Event Payload: [`RIFFContainer`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L63-L65)
 
 emitted after parsing riff header.
 
 
 ### `chunk`
 
-- Event Payload: `WebPChunk`
+- Event Payload: [`WebPChunk`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L205-L214)
 
 emitted after parsing WebP chunk
 
 ## `format`
 
-- Event Payload: `WebP`
+- Event Payload: [`WebP`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L216-L225)
 
 emitted after all WebP chunks have parsed
 
