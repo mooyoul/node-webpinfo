@@ -10,9 +10,9 @@
 
 Node.js Stream based WebP Container Parser.
 
-node-webpinfo | webpinfo (libwebp) 
+node-webpinfo [Example](https://github.com/mooyoul/node-webpinfo/blob/master/examples/webpinfo.ts) | webpinfo (libwebp) 
 ---------------- | ----------------
-[![Output of node-webpinfo](https://raw.githubusercontent.com/mooyoul/node-webpinfo/master/examples/output-node-webpinfo.png)] | [![Output of webpinfo](https://raw.githubusercontent.com/mooyoul/node-webpinfo/master/examples/output-libwebp-webpinfo.png)]
+![Output of node-webpinfo](https://raw.githubusercontent.com/mooyoul/node-webpinfo/master/examples/output-node-webpinfo.png) | ![Output of webpinfo](https://raw.githubusercontent.com/mooyoul/node-webpinfo/master/examples/output-libwebp-webpinfo.png)
 
 
 ## Install
