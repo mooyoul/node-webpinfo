@@ -7,7 +7,7 @@ after_success:
 - cat ./coverage/lcov.info | node_modules/.bin/coveralls
 - bash <(curl -s https://codecov.io/bash)
 before_deploy:
-- npm run prepublisnOnly
+- npm run prepublishOnly
 deploy:
   provider: npm
   email: mooyoul@gmail.com
