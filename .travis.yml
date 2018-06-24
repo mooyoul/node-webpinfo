@@ -1,9 +1,17 @@
 language: node_js
 node_js:
-  - "4"
-  - "6"
-  - "8"
-  - "10"
+- '4'
+- '6'
+- '8'
+- '10'
 after_success:
-  - cat ./coverage/lcov.info | node_modules/.bin/coveralls
-  - bash <(curl -s https://codecov.io/bash)
+- cat ./coverage/lcov.info | node_modules/.bin/coveralls
+- bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: npm
+  email: mooyoul@gmail.com
+  api_key:
+    secure: VvILN+vsmGERhjtBSNryjHnHDXuPUqJo4SqyZ3DzsFuCOnG7Yxqt/oMccZxisbAhCER0wW9+n8NDPy0Si1z32pNhrrFf2wyZYSPO63tdpXRD39yw8XUaEh5b/DB5s1lUHZf1RBpxO9JM4yBeZ6mL/IgoTMgQkHOq08z+lIOdvd29xpu9LktKurJhAJ851ila8S7KmoprxKeLW1zv1WigQAmoTqu0KKb+LQXKhrtMEqQP3GCkBZrEZ4bnTyTNWhaRwFyiwFF/Ccro25o2kq7l0CBw0avkG1FI6iMyqOKaria0+gNSoZboRnyZF1jmUNx1mmM7xU7SSnQEUaKqYRnsjc8MWL+Y/kOR5CB9zhky/E0Jj9q73imB4Ucfb4cGsnO/YnU+RV7sPE+kWwftumUT417JeoVHXGViQGlwZvYggj0G+IHr/hYgXzSw0hdd46FW/TVw1RcFfmuosnE9zveZrbuTtYlt0HEjLRbprEJTw4Npfj6WxgKrzLHVpaEY0gBvGClOA4AgXsNEIFct4KIit0aKopcROX/hkaxIoJGUEOYYNjKJ9/NS5VIctCQ7Qf6WwyMUrB8u1gjPG7FG7g5WevF67kBkZ4Ulsn/yeuOfwQ68Re1FJW4t98TzKRmUIzimnhs1JxAQF8rAcQqJE23VfEpKkb0yTt1tCc4KWSapJhQ=
+  on:
+    tags: true
+    repo: mooyoul/node-webpinfo
