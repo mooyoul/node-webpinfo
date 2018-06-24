@@ -1,0 +1,67 @@
+{
+  "name": "webpinfo",
+  "version": "1.0.0",
+  "description": "Get information of WebP Image (Supports Animated WebP also!)",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "npm run clean && tsc",
+    "prepublishOnly": "npm run build",
+    "lint": "tslint -c tslint.json '{examples,src,test}/**/*.ts'",
+    "test": "TS_NODE_PROJECT=tsconfig.test.json nyc mocha -R spec test/**/*.ts"
+  },
+  "nyc": {
+    "require": [
+      "ts-node/register",
+      "source-map-support/register"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src/**/*.ts"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "all": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mooyoul/webpinfo.git"
+  },
+  "keywords": [
+    "webp",
+    "image",
+    "webpinfo"
+  ],
+  "author": "MooYeol Prescott Lee <mooyoul@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mooyoul/webpinfo/issues"
+  },
+  "homepage": "https://github.com/mooyoul/webpinfo#readme",
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/chai-as-promised": "^7.1.0",
+    "@types/mocha": "^5.2.3",
+    "@types/node": "^10.3.4",
+    "@types/sinon": "^5.0.1",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
+    "sinon": "^6.0.0",
+    "source-map-support": "^0.5.6",
+    "ts-node": "^6.1.2",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "@types/debug": "0.0.30",
+    "debug": "^3.1.0",
+    "stream-parser": "^0.3.1",
+    "thunks": "^4.9.2"
+  }
+}
