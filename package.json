@@ -1,6 +1,6 @@
 {
   "name": "webpinfo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get information of WebP Image (Supports Animated WebP also!)",
   "main": "lib/index.js",
   "scripts": {
