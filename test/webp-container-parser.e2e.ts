@@ -29,7 +29,7 @@ describe("WebPInfo E2E", () => {
         );
 
         expect(
-          await WebPInfo.parse("http://www.gstatic.com/webp/gallery/1.webp")
+          await WebPInfo.parse("http://www.gstatic.com/webp/gallery/1.webp"),
         ).to.be.deep.eq(
           require("./lossy").format,
         );

@@ -804,7 +804,7 @@ describe("WebPInfo", () => {
             {
               offsetX: 0, offsetY: 0,
               width: 200, height: 200,
-              duration: 31, rsv1: 0,
+              duration: 30, rsv1: 0,
               blending: 0, disposal: 0,
             },
             "should be ANMF bitstream information",

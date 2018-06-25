@@ -127,6 +127,11 @@ emitted after all WebP chunks have parsed
 
 ## Changelog
 
+#### 1.1.1
+
+- fixed parser miscalculates `duration` of `ANMF` chunk.
+  - If actual ANMF duration is 60(ms), parser reported duration as 61(ms), not 60.
+
 #### 1.1.0
 
 - Now `WebPInfo#parse`, `WebPInfo#isAnimated`, `WebPInfo#isLossless` methods can accept not only Buffer but also Local File Path, URL, and ReadableStream.
@@ -134,7 +139,7 @@ emitted after all WebP chunks have parsed
 
 #### 1.0.4
 
-Initial Release
+- Initial Release
 
 
 ## Debugging
@@ -147,19 +152,24 @@ You will be able to see debug messages on your console.
 
 ## Testing
 
-> $ npm run test
+```bash
+$ npm run test
+```
 
 ... OR
 
-> $ npm run lint
-
-> $ npm run coverage
+```bash
+$ npm run lint # Check lint
+$ npm run coverage # Run test & generate code coverage report
+```
 
 
 
 ## Build
 
-> $ npm run build
+```bash
+$ npm run build
+```
 
 
 ## License

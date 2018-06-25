@@ -927,7 +927,7 @@ export class WebPInfo extends StreamParserWritable {
 
       const frameDuration = (buf.readUInt8(12) |
         buf.readUInt8(13) |
-        buf.readUInt8(14)) + 1;
+        buf.readUInt8(14));
 
       const tailBits = buf.readUInt8(15);
 
