@@ -86,14 +86,14 @@ http.get("http://www.gstatic.com/webp/gallery/1.webp", (res) => {
 
 ## API
 
-### Please refer detailed type definitions on [src/webpinfo.ts](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L132-L225).
+### Please refer detailed type definitions on [src/webpinfo.ts](https://github.com/mooyoul/node-webpinfo/blob/4bb7fb281ac23b23ed74016463646ec0835f32f2/src/webpinfo.ts#L138-L237).
 
-### `WebPInfo` => [`WritableStream`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L228)
+### `WebPInfo` => [`WritableStream`](https://github.com/mooyoul/node-webpinfo/blob/4bb7fb281ac23b23ed74016463646ec0835f32f2/src/webpinfo.ts#L240)
 
 Basically WebPInfo is `WritableStream`.
 
 
-### `WebPInfo.from(input: string | Buffer | ReadableStream)` => [`Promise<WebP>`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L216-L225)
+### `WebPInfo.from(input: string | Buffer | ReadableStream)` => [`Promise<WebP>`](https://github.com/mooyoul/node-webpinfo/blob/4bb7fb281ac23b23ed74016463646ec0835f32f2/src/webpinfo.ts#L223-L237)
  
 Parse WebPInfo from given input.
 Input can be local file path, url, Buffer, or Readable Stream.
@@ -112,25 +112,29 @@ Return true if given buffer contains VP8L chunk.
 
 ### `riff`
 
-- Event Payload: [`RIFFContainer`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L63-L65)
+- Event Payload: [`RIFFContainer`](https://github.com/mooyoul/node-webpinfo/blob/4bb7fb281ac23b23ed74016463646ec0835f32f2/src/webpinfo.ts#L69-L71)
 
 emitted after parsing riff header.
 
 
 ### `chunk`
 
-- Event Payload: [`WebPChunk`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L205-L214)
+- Event Payload: [`WebPChunk`](https://github.com/mooyoul/node-webpinfo/blob/4bb7fb281ac23b23ed74016463646ec0835f32f2/src/webpinfo.ts#L212-L221)
 
 emitted after parsing WebP chunk
 
 ### `format`
 
-- Event Payload: [`WebP`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L216-L225)
+- Event Payload: [`WebP`](https://github.com/mooyoul/node-webpinfo/blob/4bb7fb281ac23b23ed74016463646ec0835f32f2/src/webpinfo.ts#L223-L237)
 
 emitted after all WebP chunks have parsed
 
 
 ## Changelog
+
+#### 1.3.0
+
+- Added `width`, `height`, `isAnimated`, `isLossless`, `hasAlpha` field to fomary summary  
 
 #### 1.2.0
 
