@@ -1,6 +1,6 @@
 {
   "name": "webpinfo",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Get information of WebP Image (Supports Animated WebP also!)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -62,8 +62,12 @@
   "dependencies": {
     "@types/debug": "0.0.30",
     "@types/node": "^10.3.4",
+    "@types/request": "^2.47.1",
+    "@types/url-regex": "^4.0.0",
     "debug": "^3.1.0",
+    "request": "^2.87.0",
     "stream-parser": "^0.3.1",
-    "thunks": "^4.9.2"
+    "thunks": "^4.9.2",
+    "url-regex": "^4.1.1"
   }
 }

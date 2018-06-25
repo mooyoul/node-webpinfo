@@ -27,6 +27,12 @@ describe("WebPInfo E2E", () => {
         ).to.be.deep.eq(
           require("./lossy").format,
         );
+
+        expect(
+          await WebPInfo.parse("http://www.gstatic.com/webp/gallery/1.webp")
+        ).to.be.deep.eq(
+          require("./lossy").format,
+        );
       });
     });
 
@@ -42,7 +48,7 @@ describe("WebPInfo E2E", () => {
 
         expect(
           await WebPInfo.parse(
-            fs.readFileSync(path.join(__dirname, "yellow-rose-lossless-with-alpha.webp")),
+            path.join(__dirname, "yellow-rose-lossless-with-alpha.webp"),
           ),
         ).to.be.deep.eq(
           require("./yellow-rose-lossless-with-alpha").format,
@@ -78,7 +84,7 @@ describe("WebPInfo E2E", () => {
       it("should return information", async () => {
         expect(
           await WebPInfo.parse(
-            fs.readFileSync(path.join(__dirname, "exif-jeju.webp")),
+            path.join(__dirname, "exif-jeju.webp"),
           ),
         ).to.be.deep.eq(
           require("./exif-jeju").format,

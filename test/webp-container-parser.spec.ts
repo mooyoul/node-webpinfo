@@ -27,7 +27,7 @@ describe("WebPInfo", () => {
   describe("static #isAnimated", () => {
     let buf: Buffer;
 
-    context("when given buffer is not animated", () => {
+    context("when given input is not animated", () => {
       beforeEach(() => {
         buf = crypto.randomBytes(65535);
         sandbox.mock(WebPInfo)
@@ -41,7 +41,7 @@ describe("WebPInfo", () => {
       });
     });
 
-    context("when given buffer is animated", () => {
+    context("when given input is animated", () => {
       beforeEach(() => {
         buf = crypto.randomBytes(65535);
         sandbox.mock(WebPInfo)
@@ -59,7 +59,7 @@ describe("WebPInfo", () => {
   describe("static #isLossless", () => {
     let buf: Buffer;
 
-    context("when given buffer is not lossless", () => {
+    context("when given input is not lossless", () => {
       beforeEach(() => {
         buf = crypto.randomBytes(65535);
         sandbox.mock(WebPInfo)
@@ -73,7 +73,7 @@ describe("WebPInfo", () => {
       });
     });
 
-    context("when given buffer is lossless", () => {
+    context("when given input is lossless", () => {
       beforeEach(() => {
         buf = crypto.randomBytes(65535);
         sandbox.mock(WebPInfo)

@@ -1,5 +1,9 @@
 import * as debug from "debug";
+import * as fs from "fs";
+import * as request from "request";
+import * as stream from "stream";
 import * as thunks from "thunks";
+import urlRegex = require("url-regex");
 
 import { StreamParserWritable } from "./stream-parser";
 
@@ -21,6 +25,8 @@ interface Callback<T> {
   (e: any): void;
   (e: any, data: T): void;
 }
+
+export type Input = Buffer | stream.Readable | string;
 
 export type ChunkType =
   "VP8" |
@@ -226,26 +232,21 @@ export interface WebP {
 
 // tslint:disable:no-bitwise
 export class WebPInfo extends StreamParserWritable {
-  public static async isAnimated(buf: Buffer): Promise<boolean> {
-    const { chunks } = await this.parse(buf);
+  public static async isAnimated(input: Input): Promise<boolean> {
+    const { chunks } = await this.parse(input);
 
     return chunks.some((c) => c.type === "ANMF");
   }
 
-  public static async isLossless(buf: Buffer): Promise<boolean> {
-    const { chunks } = await this.parse(buf);
+  public static async isLossless(input: Input): Promise<boolean> {
+    const { chunks } = await this.parse(input);
 
     return chunks.some((c) => c.type === "VP8L");
   }
 
-  public static parse(buf: Buffer): Promise<WebP> {
+  public static parse(input: Input): Promise<WebP> {
     return new Promise<WebP>((resolve, reject) => {
       const parser = new this();
-
-      parser.on("error", onError);
-      parser.on("format", onFormat);
-
-      parser.end(buf);
 
       function onError(e: Error) {
         parser.removeListener("error", onError);
@@ -260,6 +261,34 @@ export class WebPInfo extends StreamParserWritable {
 
         resolve(format);
       }
+
+      parser.on("error", onError);
+      parser.on("format", onFormat);
+
+      if (Buffer.isBuffer(input)) {
+        parser.end(input);
+        return;
+      }
+
+      const inputStream = (() => {
+        if (input instanceof stream.Readable) {
+          return input;
+        }
+
+        const isUrl = urlRegex({ exact: true }).test(input);
+
+        if (isUrl) {
+          return request({
+            method: "GET",
+            url: input,
+            encoding: null,
+          });
+        }
+
+        return fs.createReadStream(input);
+      })();
+
+      inputStream.pipe(parser);
     });
   }
 

@@ -48,8 +48,14 @@ $ npm install webpinfo
 ```typescript
 import { WebPInfo } from "webpinfo";
 
-// IMPORTANT: buf should be instance of Buffer.
+// local file path
+const info = await WebPInfo.parse("/some/local/file/path.webp");
+// url
+const info = await WebPInfo.parse("https://example.com/some/file/path.webp");
+// buffer
 const info = await WebPInfo.parse(buf);
+// readable stream
+const info = await WebPInfo.parse(fs.createReadStream(path));
 console.log("INFO: ", info);
 ```
 
@@ -82,16 +88,17 @@ http.get("http://www.gstatic.com/webp/gallery/1.webp", (res) => {
 Basically WebPInfo is `WritableStream`.
 
 
-### `WebPInfo.parse(buf: Buffer)` => [`Promise<WebP>`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L216-L225)
+### `WebPInfo.parse(input: string | Buffer | ReadableStream)` => [`Promise<WebP>`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L216-L225)
  
-Parse WebPInfo from given Buffer.
+Parse WebPInfo from given input.
+Input can be local file path, url, Buffer, or Readable Stream.
 
 
-### `WebPInfo.isAnimated(buf: Buffer)` => `Promise<boolean>`
+### `WebPInfo.isAnimated(input: string | Buffer | ReadableStream)` => `Promise<boolean>`
 
-Return true if given buffer contains any animation frame.
+Return true if given input contains any animation frame.
 
-### `WebPInfo.isLossless(buf: Buffer)` => `Promise<boolean>`
+### `WebPInfo.isLossless(input: string | Buffer | ReadableStream)` => `Promise<boolean>`
 
 Return true if given buffer contains VP8L chunk.
 
@@ -116,6 +123,18 @@ emitted after parsing WebP chunk
 - Event Payload: [`WebP`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L216-L225)
 
 emitted after all WebP chunks have parsed
+
+
+## Changelog
+
+#### 1.1.0
+
+- Now `WebPInfo#parse`, `WebPInfo#isAnimated`, `WebPInfo#isLossless` methods can accept not only Buffer but also Local File Path, URL, and ReadableStream.
+
+
+#### 1.0.4
+
+Initial Release
 
 
 ## Debugging
