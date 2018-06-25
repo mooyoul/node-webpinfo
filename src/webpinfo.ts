@@ -233,18 +233,18 @@ export interface WebP {
 // tslint:disable:no-bitwise
 export class WebPInfo extends StreamParserWritable {
   public static async isAnimated(input: Input): Promise<boolean> {
-    const { chunks } = await this.parse(input);
+    const { chunks } = await this.from(input);
 
     return chunks.some((c) => c.type === "ANMF");
   }
 
   public static async isLossless(input: Input): Promise<boolean> {
-    const { chunks } = await this.parse(input);
+    const { chunks } = await this.from(input);
 
     return chunks.some((c) => c.type === "VP8L");
   }
 
-  public static parse(input: Input): Promise<WebP> {
+  public static from(input: Input): Promise<WebP> {
     return new Promise<WebP>((resolve, reject) => {
       const parser = new this();
 

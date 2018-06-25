@@ -31,7 +31,7 @@ describe("WebPInfo", () => {
       beforeEach(() => {
         buf = crypto.randomBytes(65535);
         sandbox.mock(WebPInfo)
-          .expects("parse")
+          .expects("from")
           .withArgs(buf)
           .resolves({ chunks: [ { type: "VP8X" } ] });
       });
@@ -45,7 +45,7 @@ describe("WebPInfo", () => {
       beforeEach(() => {
         buf = crypto.randomBytes(65535);
         sandbox.mock(WebPInfo)
-          .expects("parse")
+          .expects("from")
           .withArgs(buf)
           .resolves({ chunks: [ { type: "ANMF" } ] });
       });
@@ -63,7 +63,7 @@ describe("WebPInfo", () => {
       beforeEach(() => {
         buf = crypto.randomBytes(65535);
         sandbox.mock(WebPInfo)
-          .expects("parse")
+          .expects("from")
           .withArgs(buf)
           .resolves({ chunks: [ { type: "VP8" } ] });
       });
@@ -77,7 +77,7 @@ describe("WebPInfo", () => {
       beforeEach(() => {
         buf = crypto.randomBytes(65535);
         sandbox.mock(WebPInfo)
-          .expects("parse")
+          .expects("from")
           .withArgs(buf)
           .resolves({ chunks: [ { type: "VP8L" } ] });
       });
@@ -110,7 +110,7 @@ describe("WebPInfo", () => {
 
       it("should throw error", async () => {
         await expect(
-          WebPInfo.parse(crypto.randomBytes(65535)),
+          WebPInfo.from(crypto.randomBytes(65535)),
         ).to.be.eventually.rejectedWith(Error, "MOCKED");
       });
     });
@@ -131,7 +131,7 @@ describe("WebPInfo", () => {
 
       it("should return parsed information", async () => {
         expect(
-          await WebPInfo.parse(crypto.randomBytes(65535)),
+          await WebPInfo.from(crypto.randomBytes(65535)),
         ).to.be.deep.eq({ MOCKED: true });
       });
     });

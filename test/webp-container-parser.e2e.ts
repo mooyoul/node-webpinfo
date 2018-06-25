@@ -21,7 +21,7 @@ describe("WebPInfo E2E", () => {
     describe("Simple Lossy Format (VP8)", () => {
       it("should return information", async () => {
         expect(
-          await WebPInfo.parse(
+          await WebPInfo.from(
             fs.readFileSync(path.join(__dirname, "lossy.webp")),
           ),
         ).to.be.deep.eq(
@@ -29,7 +29,7 @@ describe("WebPInfo E2E", () => {
         );
 
         expect(
-          await WebPInfo.parse("http://www.gstatic.com/webp/gallery/1.webp"),
+          await WebPInfo.from("http://www.gstatic.com/webp/gallery/1.webp"),
         ).to.be.deep.eq(
           require("./lossy").format,
         );
@@ -39,7 +39,7 @@ describe("WebPInfo E2E", () => {
     describe("Simple Lossless Format (VP8L)", () => {
       it("should return information", async () => {
         expect(
-          await WebPInfo.parse(
+          await WebPInfo.from(
             fs.readFileSync(path.join(__dirname, "lossless.webp")),
           ),
         ).to.be.deep.eq(
@@ -47,7 +47,7 @@ describe("WebPInfo E2E", () => {
         );
 
         expect(
-          await WebPInfo.parse(
+          await WebPInfo.from(
             path.join(__dirname, "yellow-rose-lossless-with-alpha.webp"),
           ),
         ).to.be.deep.eq(
@@ -59,7 +59,7 @@ describe("WebPInfo E2E", () => {
     describe("Extended Format (VP8X / Animated)", () => {
       it("should return information", async () => {
         expect(
-          await WebPInfo.parse(
+          await WebPInfo.from(
             fs.readFileSync(path.join(__dirname, "animated.webp")),
           ),
         ).to.be.deep.eq(
@@ -71,7 +71,7 @@ describe("WebPInfo E2E", () => {
     describe("Extended Format (VP8X / ICC Profile)", () => {
       it("should return information", async () => {
         expect(
-          await WebPInfo.parse(
+          await WebPInfo.from(
             fs.readFileSync(path.join(__dirname, "icc.webp")),
           ),
         ).to.be.deep.eq(
@@ -83,7 +83,7 @@ describe("WebPInfo E2E", () => {
     describe("Extended Format (VP8X / EXIF)", () => {
       it("should return information", async () => {
         expect(
-          await WebPInfo.parse(
+          await WebPInfo.from(
             path.join(__dirname, "exif-jeju.webp"),
           ),
         ).to.be.deep.eq(
@@ -95,7 +95,7 @@ describe("WebPInfo E2E", () => {
     describe("Extended Format (VP8X / Alpha)", () => {
       it("should return information", async () => {
         expect(
-          await WebPInfo.parse(
+          await WebPInfo.from(
             fs.readFileSync(path.join(__dirname, "yellow-rose-lossy-with-alpha.webp")),
           ),
         ).to.be.deep.eq(

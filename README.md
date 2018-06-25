@@ -15,6 +15,11 @@ node-webpinfo [Example](https://github.com/mooyoul/node-webpinfo/blob/master/exa
 ![Output of node-webpinfo](https://raw.githubusercontent.com/mooyoul/node-webpinfo/master/examples/output-node-webpinfo.png) | ![Output of webpinfo](https://raw.githubusercontent.com/mooyoul/node-webpinfo/master/examples/output-libwebp-webpinfo.png)
 
 
+## Sponsor
+
+- [Vingle](https://www.vingle.net) - Vingle, Very Community. Love the things that you love. - [We're hiring!](https://careers.vingle.net/#/engineering/backend)
+
+
 ## Install
 
 ```bash
@@ -49,13 +54,13 @@ $ npm install webpinfo
 import { WebPInfo } from "webpinfo";
 
 // local file path
-const info = await WebPInfo.parse("/some/local/file/path.webp");
+const info = await WebPInfo.from("/some/local/file/path.webp");
 // url
-const info = await WebPInfo.parse("https://example.com/some/file/path.webp");
+const info = await WebPInfo.from("https://example.com/some/file/path.webp");
 // buffer
-const info = await WebPInfo.parse(buf);
+const info = await WebPInfo.from(buf);
 // readable stream
-const info = await WebPInfo.parse(fs.createReadStream(path));
+const info = await WebPInfo.from(fs.createReadStream(path));
 console.log("INFO: ", info);
 ```
 
@@ -88,7 +93,7 @@ http.get("http://www.gstatic.com/webp/gallery/1.webp", (res) => {
 Basically WebPInfo is `WritableStream`.
 
 
-### `WebPInfo.parse(input: string | Buffer | ReadableStream)` => [`Promise<WebP>`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L216-L225)
+### `WebPInfo.from(input: string | Buffer | ReadableStream)` => [`Promise<WebP>`](https://github.com/mooyoul/node-webpinfo/blob/a1731f6b062c66534018843ac3b644959d5b02ac/src/webpinfo.ts#L216-L225)
  
 Parse WebPInfo from given input.
 Input can be local file path, url, Buffer, or Readable Stream.
@@ -126,6 +131,10 @@ emitted after all WebP chunks have parsed
 
 
 ## Changelog
+
+#### 1.2.0
+
+- **BREAKING** Rename `WebPInfo#parse` to `WebPInfo#from`.  
 
 #### 1.1.1
 
