@@ -440,7 +440,6 @@ export class WebPInfo extends StreamParserWritable {
       this.log("detected RIFF chunk size: %d", riffChunkSize);
 
       if (riffChunkSize <= 8) { // "WEBP" Signature (4 bytes) + WebP Chunk Type (4 bytes)
-        this.log("WTFWTFWTF");
         throw new Error("Invalid RIFF Chunk size");
       }
 
@@ -453,7 +452,6 @@ export class WebPInfo extends StreamParserWritable {
   }
 
   private readWebPSignature() {
-    this.log("CALLED???");
     // 4 bytes - "WEBP" signature
     return this.readBytes(4)((e: Error, buf: Buffer) => {
       if (e) {
