@@ -24,6 +24,11 @@ export = {
       },
     ],
     summary: {
+      isAnimated: false,
+      isLossless: true,
+      hasAlpha: false,
+      width: 1920,
+      height: 1080,
       frames: 1,
       chunks: {
         VP8: 0,

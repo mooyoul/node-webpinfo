@@ -154,6 +154,7 @@ export interface VP8LChunk extends Chunk {
 
 export interface VP8XChunk extends Chunk {
   type: "VP8X";
+  format: "extended";
   width: number;
   height: number;
   icc: boolean;
@@ -223,6 +224,11 @@ export interface WebP {
   riff: RIFFContainer;
   chunks: WebPChunk[];
   summary: {
+    width?: number;
+    height?: number;
+    isAnimated: boolean;
+    isLossless: boolean;
+    hasAlpha: boolean;
     frames: number;
     chunks: {
       [K in ChunkType]: number;
@@ -233,15 +239,15 @@ export interface WebP {
 // tslint:disable:no-bitwise
 export class WebPInfo extends StreamParserWritable {
   public static async isAnimated(input: Input): Promise<boolean> {
-    const { chunks } = await this.from(input);
+    const { summary } = await this.from(input);
 
-    return chunks.some((c) => c.type === "ANMF");
+    return summary.isAnimated;
   }
 
   public static async isLossless(input: Input): Promise<boolean> {
-    const { chunks } = await this.from(input);
+    const { summary } = await this.from(input);
 
-    return chunks.some((c) => c.type === "VP8L");
+    return summary.isLossless;
   }
 
   public static from(input: Input): Promise<WebP> {
@@ -324,7 +330,41 @@ export class WebPInfo extends StreamParserWritable {
 
       const [ riff, , chunks ] = values;
 
+      const { isAnimated, isLossless, hasAlpha, width, height } = chunks.reduce((hash, c, index) => {
+        if (index === 0 && (c.type === "VP8" || c.type === "VP8L" || c.type === "VP8X")) {
+          hash.width = c.width;
+          hash.height = c.height;
+        }
+
+        if (c.type === "VP8L") {
+          hash.isLossless = true;
+        }
+
+        if (c.type === "ALPH" || (c.type === "VP8X" && c.alpha)) {
+          hash.hasAlpha = true;
+        }
+
+        if (c.type === "ANMF") {
+          hash.isAnimated = true;
+        }
+
+        return hash;
+      }, {
+        isAnimated: false,
+        isLossless: false,
+        hasAlpha: false,
+      } as {
+        isAnimated: boolean;
+        isLossless: boolean;
+        hasAlpha: boolean;
+        width?: number;
+        height?: number;
+      });
+
       const summary = {
+        isAnimated, isLossless,
+        hasAlpha,
+        width, height,
         frames: chunks.filter((c) => this.FRAME_COUNTABLE_CHUNK_TYPES.has(c.type)).length,
         chunks: chunks.reduce((hash, chunk) => {
           const type = chunk.type as ChunkType;
@@ -536,6 +576,7 @@ export class WebPInfo extends StreamParserWritable {
 
           return {
             type: "VP8X",
+            format: "extended",
             offset: chunkOffset,
             size: chunkSize,
             width: bitstream.canvasWidth,

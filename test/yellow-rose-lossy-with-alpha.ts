@@ -9,6 +9,7 @@ export = {
     chunks: [
       {
         type: "VP8X",
+        format: "extended",
         offset: 12,
         size: 18,
         width: 400,
@@ -65,6 +66,11 @@ export = {
       },
     ],
     summary: {
+      isAnimated: false,
+      isLossless: false,
+      hasAlpha: true,
+      width: 400,
+      height: 301,
       frames: 1,
       chunks: {
         VP8: 1,

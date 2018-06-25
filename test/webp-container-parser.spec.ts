@@ -33,7 +33,7 @@ describe("WebPInfo", () => {
         sandbox.mock(WebPInfo)
           .expects("from")
           .withArgs(buf)
-          .resolves({ chunks: [ { type: "VP8X" } ] });
+          .resolves({ summary: { isAnimated: false } });
       });
 
       it("should return false", async () => {
@@ -47,7 +47,7 @@ describe("WebPInfo", () => {
         sandbox.mock(WebPInfo)
           .expects("from")
           .withArgs(buf)
-          .resolves({ chunks: [ { type: "ANMF" } ] });
+          .resolves({ summary: { isAnimated: true } });
       });
 
       it("should return true", async () => {
@@ -65,7 +65,7 @@ describe("WebPInfo", () => {
         sandbox.mock(WebPInfo)
           .expects("from")
           .withArgs(buf)
-          .resolves({ chunks: [ { type: "VP8" } ] });
+          .resolves({ summary: { isLossless: false } });
       });
 
       it("should return false", async () => {
@@ -79,7 +79,7 @@ describe("WebPInfo", () => {
         sandbox.mock(WebPInfo)
           .expects("from")
           .withArgs(buf)
-          .resolves({ chunks: [ { type: "VP8L" } ] });
+          .resolves({ summary: { isLossless: true } });
       });
 
       it("should return true", async () => {
