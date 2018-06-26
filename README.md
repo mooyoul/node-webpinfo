@@ -134,7 +134,7 @@ emitted after all WebP chunks have parsed
 
 #### 1.3.0
 
-- Added `width`, `height`, `isAnimated`, `isLossless`, `hasAlpha` field to fomary summary  
+- Added `width`, `height`, `isAnimated`, `isLossless`, `hasAlpha` field to format summary  
 
 #### 1.2.0
 
