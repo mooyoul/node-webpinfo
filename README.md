@@ -130,6 +130,12 @@ emitted after parsing WebP chunk
 emitted after all WebP chunks have parsed
 
 
+
+## Related
+
+- [mooyoul/is-webp-extended](https://github.com/mooyoul/is-webp-extended) - Extended version of `is-webp` package which supports Animated WebP. Compatible with Browser environment (e.g. `File`, `ArrayBuffer`)
+
+
 ## Changelog
 
 #### 1.3.0
