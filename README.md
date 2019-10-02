@@ -130,7 +130,6 @@ emitted after parsing WebP chunk
 emitted after all WebP chunks have parsed
 
 
-
 ## Related
 
 - [mooyoul/is-webp-extended](https://github.com/mooyoul/is-webp-extended) - Extended version of `is-webp` package which supports Animated WebP. Compatible with Browser environment (e.g. `File`, `ArrayBuffer`)
@@ -139,6 +138,7 @@ emitted after all WebP chunks have parsed
 ## Changelog
 
 See [CHANGELOG](/CHANGELOG.md).
+
 
 ## Debugging
 
@@ -162,13 +162,11 @@ $ npm run coverage # Run test & generate code coverage report
 ```
 
 
-
 ## Build
 
 ```bash
 $ npm run build
 ```
-
 
 ## License
 [MIT](LICENSE)
