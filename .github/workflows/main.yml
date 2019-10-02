@@ -18,7 +18,7 @@ jobs:
           npx coveralls < ./coverage/lcov.info
           bash <(curl -s https://codecov.io/bash)
         env:
-          CODECOV_TOKEN: ${{ screts.CODECOV_TOKEN }}
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       - name: Publish
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         # npm will not execute `prepublisnOnly` lifecycle hook if user is root.
