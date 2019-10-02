@@ -1,14 +1,15 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es6",
-        "noImplicitAny": true,
-        "sourceMap": true,
-        "declaration": true,
+        "target": "es2017",
+        "rootDir": "src",
         "outDir": ".build",
+        "noImplicitAny": true,
+        "declaration": true,
+        "sourceMap": true,
         "strictNullChecks": true
     },
     "include": [
-        "src"
+        "src/**/*.ts"
     ]
 }
