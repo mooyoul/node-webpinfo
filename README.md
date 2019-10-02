@@ -1,6 +1,6 @@
 # node-webpinfo
 
-[![Build Status](https://travis-ci.org/mooyoul/node-webpinfo.svg?branch=master)](https://travis-ci.org/mooyoul/node-webpinfo)
+[![Build Status](https://github.com/mooyoul/node-webpinfo/workflows/workflow/badge.svg)](https://github.com/mooyoul/node-webpinfo/actions)
 [![Coverage Status](https://coveralls.io/repos/github/mooyoul/node-webpinfo/badge.svg?branch=master)](https://coveralls.io/github/mooyoul/node-webpinfo?branch=master)
 [![codecov.io](https://codecov.io/github/mooyoul/node-webpinfo/coverage.svg?branch=master)](https://codecov.io/github/mooyoul/node-webpinfo?branch=master)
 [![Semantic Release enabled](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
