@@ -7,3 +7,6 @@ tslint.json
 .nyc_output
 .idea
 coverage
+.releaserc.json
+.github
+renovate.json
