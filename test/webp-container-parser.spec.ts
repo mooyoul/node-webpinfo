@@ -1,15 +1,15 @@
-import * as chai from "chai";
-import * as chaiAsPromised from "chai-as-promised";
+import { expect } from "chai";
 import * as sinon from "sinon";
 import { thunk } from "thunks";
-
-chai.use(chaiAsPromised);
-
-const expect = chai.expect;
 
 import * as crypto from "crypto";
 
 import { WebPInfo } from "../src/webpinfo";
+
+function toJS<R, E = Error>(promise: Promise<R>): Promise<[null, R] | [E, null]> {
+  return promise.then((v) => [null, v] as [null, R])
+    .catch((e) => [e, null] as [E, null]);
+}
 
 describe("WebPInfo", () => {
   let sandbox: sinon.SinonSandbox;
@@ -109,9 +109,8 @@ describe("WebPInfo", () => {
       });
 
       it("should throw error", async () => {
-        await expect(
-          WebPInfo.from(crypto.randomBytes(65535)),
-        ).to.be.eventually.rejectedWith(Error, "MOCKED");
+        const [ e ] = await toJS(WebPInfo.from(crypto.randomBytes(65535)));
+        expect(e).to.be.instanceOf(Error).with.property("message", "MOCKED");
       });
     });
 
