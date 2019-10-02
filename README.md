@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/mooyoul/node-webpinfo.svg?branch=master)](https://travis-ci.org/mooyoul/node-webpinfo)
 [![Coverage Status](https://coveralls.io/repos/github/mooyoul/node-webpinfo/badge.svg?branch=master)](https://coveralls.io/github/mooyoul/node-webpinfo?branch=master)
 [![codecov.io](https://codecov.io/github/mooyoul/node-webpinfo/coverage.svg?branch=master)](https://codecov.io/github/mooyoul/node-webpinfo?branch=master)
-[![Dependency Status](https://david-dm.org/mooyoul/node-webpinfo.svg)](https://david-dm.org/mooyoul/node-webpinfo)
-[![devDependency Status](https://david-dm.org/mooyoul/node-webpinfo/dev-status.svg)](https://david-dm.org/mooyoul/node-webpinfo#info=devDependencies)
+[![Semantic Release enabled](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![Known Vulnerabilities](https://snyk.io/test/github/mooyoul/node-webpinfo/badge.svg)](https://snyk.io/test/github/mooyoul/node-webpinfo)
 [![MIT license](http://img.shields.io/badge/license-MIT-blue.svg)](http://mooyoul.mit-license.org/)
 
@@ -138,28 +138,7 @@ emitted after all WebP chunks have parsed
 
 ## Changelog
 
-#### 1.3.0
-
-- Added `width`, `height`, `isAnimated`, `isLossless`, `hasAlpha` field to format summary  
-
-#### 1.2.0
-
-- **BREAKING** Rename `WebPInfo#parse` to `WebPInfo#from`.  
-
-#### 1.1.1
-
-- fixed parser miscalculates `duration` of `ANMF` chunk.
-  - If actual ANMF duration is 60(ms), parser reported duration as 61(ms), not 60.
-
-#### 1.1.0
-
-- Now `WebPInfo#parse`, `WebPInfo#isAnimated`, `WebPInfo#isLossless` methods can accept not only Buffer but also Local File Path, URL, and ReadableStream.
-
-
-#### 1.0.4
-
-- Initial Release
-
+See [CHANGELOG](/CHANGELOG.md).
 
 ## Debugging
 
