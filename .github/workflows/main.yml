@@ -13,7 +13,13 @@ jobs:
         run: npm run lint
       - name: Test
         run: npm test
-      - name: Upload Coverage
+      - name: Upload Coverage to coveralls
+      - name: Coveralls
+        uses: coverallsapp/github-action@v1.0.1
+        with:
+          # This `github_token` secret is default token (restricted token)
+          github-token: ${{ secrets.github_token }}
+      - name: Upload Coverage to codecov
         uses: codecov/codecov-action@v1.0.2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
