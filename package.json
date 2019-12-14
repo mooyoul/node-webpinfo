@@ -52,7 +52,7 @@
     "@types/sinon": "7.5.1",
     "@types/url-regex": "5.0.0",
     "@vingle/commitlint-preset": "1.0.3",
-    "@vingle/semantic-release-config": "1.0.3",
+    "@vingle/semantic-release-config": "1.0.4",
     "@vingle/tslint-preset": "1.0.0",
     "chai": "4.2.0",
     "husky": "3.1.0",
