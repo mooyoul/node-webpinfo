@@ -55,7 +55,7 @@
     "@vingle/semantic-release-config": "1.0.5",
     "@vingle/tslint-preset": "1.0.0",
     "chai": "4.2.0",
-    "husky": "3.1.0",
+    "husky": "4.0.0",
     "mocha": "6.2.2",
     "nyc": "14.1.1",
     "sinon": "7.5.0",
