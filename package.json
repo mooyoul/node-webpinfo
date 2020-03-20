@@ -53,7 +53,7 @@
     "@types/url-regex": "5.0.0",
     "@vingle/commitlint-preset": "1.0.3",
     "@vingle/semantic-release-config": "1.0.5",
-    "@vingle/tslint-preset": "1.0.0",
+    "@vingle/tslint-preset": "1.0.1",
     "chai": "4.2.0",
     "husky": "4.2.3",
     "mocha": "6.2.2",
