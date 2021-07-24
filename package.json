@@ -45,7 +45,7 @@
   "homepage": "https://github.com/mooyoul/node-webpinfo#readme",
   "devDependencies": {
     "@types/chai": "4.2.21",
-    "@types/debug": "4.1.6",
+    "@types/debug": "4.1.7",
     "@types/mocha": "5.2.7",
     "@types/node": "10.17.60",
     "@types/request": "2.48.6",
