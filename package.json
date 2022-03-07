@@ -44,7 +44,7 @@
   },
   "homepage": "https://github.com/mooyoul/node-webpinfo#readme",
   "devDependencies": {
-    "@types/chai": "4.2.21",
+    "@types/chai": "4.3.0",
     "@types/debug": "4.1.7",
     "@types/mocha": "5.2.7",
     "@types/node": "10.17.60",
@@ -54,7 +54,7 @@
     "@vingle/commitlint-preset": "1.0.3",
     "@vingle/semantic-release-config": "1.0.5",
     "@vingle/tslint-preset": "1.0.1",
-    "chai": "4.3.4",
+    "chai": "4.3.6",
     "husky": "4.3.8",
     "mocha": "6.2.3",
     "nyc": "15.1.0",
