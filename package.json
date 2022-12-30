@@ -56,7 +56,7 @@
     "@vingle/tslint-preset": "1.0.1",
     "chai": "4.3.6",
     "husky": "4.3.8",
-    "mocha": "6.2.3",
+    "mocha": "10.2.0",
     "nyc": "15.1.0",
     "sinon": "7.5.0",
     "source-map-support": "0.5.20",
