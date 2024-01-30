@@ -19,7 +19,7 @@ jobs:
           # This `github_token` secret is default token (restricted token)
           github-token: ${{ secrets.github_token }}
       - name: Upload Coverage to codecov
-        uses: codecov/codecov-action@v1.5.2
+        uses: codecov/codecov-action@v3.1.6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Publish
