@@ -14,7 +14,7 @@ jobs:
       - name: Test
         run: npm test
       - name: Upload Coverage to coveralls
-        uses: coverallsapp/github-action@v1.2.5
+        uses: coverallsapp/github-action@v2.3.6
         with:
           # This `github_token` secret is default token (restricted token)
           github-token: ${{ secrets.github_token }}
