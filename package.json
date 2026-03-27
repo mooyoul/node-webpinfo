@@ -46,7 +46,7 @@
   "devDependencies": {
     "@types/chai": "4.3.20",
     "@types/debug": "4.1.13",
-    "@types/mocha": "5.2.7",
+    "@types/mocha": "10.0.10",
     "@types/node": "10.17.60",
     "@types/request": "2.48.13",
     "@types/sinon": "7.5.2",
