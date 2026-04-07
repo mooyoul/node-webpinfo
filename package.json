@@ -51,7 +51,7 @@
     "@types/request": "2.48.13",
     "@types/sinon": "7.5.2",
     "@types/url-regex": "5.0.0",
-    "@vingle/commitlint-preset": "1.0.3",
+    "@vingle/commitlint-preset": "2.0.0",
     "@vingle/semantic-release-config": "1.0.5",
     "@vingle/tslint-preset": "1.0.1",
     "chai": "4.5.0",
